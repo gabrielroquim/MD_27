@@ -24,7 +24,7 @@ class enderecoPage {
 
     get #salvar() { return cy.get(".button") }
 
-    get mensagem() { return cy.get(".woocommerce-message") }
+    get mensagemAlterado() { return cy.get(".woocommerce-message") }
 
    cadastro(nome, sobrenome, pais, endereco, numero, cidade, estado, cep, phone) {
         this.#preencherEndereco.click()
