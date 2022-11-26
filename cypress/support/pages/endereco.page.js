@@ -1,83 +1,44 @@
 /// <reference types="cypress" />
 
-class EnderecoPage {
+class enderecoPage {
 
-    get #cadEndereco() {
-        return cy.get(".woocommerce-MyAccount-navigation-link--edit-address > a")
-    }
+    get #preencherEndereco() { return cy.get(":nth-child(1) > .title > .edit") }
 
-    get #billing(){
-        return cy.get(":nth-child(1) > .title > .edit")
-    }
+    get #nome() { return cy.get("#billing_first_name") }
 
-    get #nome(){
-        return cy.get("#billing_first_name")
-    }
+    get #sobrenome() { return cy.get("#billing_last_name") }
 
-    get #sobrenome(){
-        return cy.get("#billing_last_name")
-    }
+    get #pais() { return cy.get("#select2-billing_country-container") }
 
-    get #empresa(){
-        return cy.get("#billing_company")
-    }
+    get #endereco() { return cy.get("#billing_address_1") }
 
-    get #pais(){
-        return cy.get("#select2-billing_country-container")
-    }
+    get #numero() { return cy.get("#billing_address_2") }
 
-    get #endereco(){
-        return cy.get("#billing_address_1")
-    }
+    get #cidade() { return cy.get("#billing_city") }
 
-    get #numero(){
-        return cy.get("#billing_address_2")
-    }
+    get #estado() { return cy.get("#select2-billing_state-container") }
 
-    get #cidade(){
-        return cy.get("#billing_city")
-    }
+    get #cep() { return cy.get("#billing_postcode") }
 
-    get #estado(){
-        return cy.get("#select2-billing_state-container")
-    }
+    get #phone() { return cy.get("#billing_phone") }
 
-    get #cep(){
-        return cy.get("#billing_postcode")
-    }
+    get #salvar() { return cy.get(".button") }
 
-    get #phone(){
-        return cy.get("#billing_phone")
-    }
+    get mensagem() { return cy.get(".woocommerce-message") }
 
-    get #email(){
-        return cy.get("#billing_email")
-    }
-
-    get #salvar(){
-        return cy.get(".button")
-    }
-
-    get mensagem(){
-        return cy.get(".woocommerce-message")
-    }
-    
-    endereco(nome, sobrenome, empresa, pais, endereco, numero, cidade, estado, cep, telefone, email){        
-        this.#cadEndereco.click()
-        this.#billing.click()
+   cadastro(nome, sobrenome, pais, endereco, numero, cidade, estado, cep, phone) {
+        this.#preencherEndereco.click()
         this.#nome.clear().type(nome)
         this.#sobrenome.clear().type(sobrenome)
-        this.#empresa.clear().type(empresa)
         this.#pais.type(pais).get('[aria-selected="true"]').click()
         this.#endereco.clear().type(endereco)
         this.#numero.clear().type(numero)
         this.#cidade.clear().type(cidade)
-        this.#estado.type(estado +'{enter}')
+        this.#estado.type(estado + '{enter}')
         this.#cep.clear().type(cep)
-        this.#phone.clear().type(telefone)
-        this.#email.clear().type(email)
+        this.#phone.clear().type(phone)       
         this.#salvar.click()
     }
 }
 
-module.exports = new EnderecoPage()
+module.exports = new enderecoPage()
