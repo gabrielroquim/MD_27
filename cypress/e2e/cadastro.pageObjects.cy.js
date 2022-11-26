@@ -1,7 +1,8 @@
-/// <references types="cypress" />
+/// <reference types="cypress" />
 
 const faker = require('faker-br')
 const { loginPage, dashboardPage } = require('../support/pages')
+const cadEndereco = require('../fixtures/endereco.json')
 
 describe('Cadastro no site EBAC-SHOP', () => {
     beforeEach(() => {
@@ -16,7 +17,11 @@ describe('Cadastro no site EBAC-SHOP', () => {
         loginPage.register(email, pass)
 
         dashboardPage.siteName.should('be.visible');
-        cy.get('.woocommerce-MyAccount-navigation-link--customer-logout > a').click()
+        
+
+        // cy.get('.woocommerce-MyAccount-navigation-link--customer-logout > a').click()
 
     });
+
+    
 });
