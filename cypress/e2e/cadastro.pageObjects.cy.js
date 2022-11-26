@@ -2,7 +2,7 @@
 
 const faker = require('faker-br')
 const { loginPage, dashboardPage, enderecoPage } = require('../support/pages')
-const cadEndereco = require('../fixtures/endereco.json')
+
 
 describe('Cadastro no site EBAC-SHOP', () => {
     beforeEach(() => {
