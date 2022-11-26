@@ -10,6 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx serverest",
+    "test:allure": "npx cypress run --env allure=true && npm run allure:generate",
+    "allure:open": "npx allure serve",
     "cy:run": "npx cypress run",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
     "cy:run-ci": "start-server-and-test start http://localhost:3000/api-doc test"
