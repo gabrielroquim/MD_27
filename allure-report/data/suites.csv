@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Dec 03 19:32:57 UTC 2022","Sat Dec 03 19:32:59 UTC 2022","1520","","Checkout","","","","chekout",""
+"passed","Sat Dec 03 19:32:18 UTC 2022","Sat Dec 03 19:32:39 UTC 2022","20649","","Cadastro no site EBAC-SHOP","","","","Deve realizar cadastro do usuário ebac",""
+"passed","Sat Dec 03 19:32:51 UTC 2022","Sat Dec 03 19:32:57 UTC 2022","6076","","Checkout","","","","login",""
